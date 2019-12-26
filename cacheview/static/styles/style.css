@@ -1,0 +1,251 @@
+body {
+  line-height: 1;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+html {
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-family: sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+.masonry {
+  width: 100%;
+}
+.nodes {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  float: left;
+}
+.info {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  float: right;
+}
+.rounded-corners {
+  border-radius: 0 15px 0 15px;
+}
+.alpine {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #0d597f !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.altlinux {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #fdd005 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.archlinux {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #6c96d0 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.centos {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #efa724 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.clearlinux {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #0ab2fa !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.coreos {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #53a3da !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.darwin {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #e1dfe1 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.debian {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #ce0056 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.fedora {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #0b57a4 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.gentoo {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #afaad0 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.mandrake {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #2080bb !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.redhat {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #ee0000 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.smgl {
+  text-align: center;
+  color: #000000 !important;
+  background-color: #c0c0c0 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.solaris {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #d42e12 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.slackware {
+  text-align: center;
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+  border: 1px;
+  border-color: #000000;
+}
+.suse {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #02d35f !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.ubuntu {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #e95420 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.windows {
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #00a4ef !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.na {
+  text-align: center;
+  color: #000000 !important;
+  background-color: #f4c9a8 !important;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+.archlinux-text {
+  color: #6c96d0 !important;
+}
+.altlinux {
+  color: #fdd005 !important;
+}
+.alpine-text {
+  color: #0d597f !important;
+}
+.centos-text {
+  color: #efa724 !important;
+}
+.clearlinux-text {
+  color: #0ab2fa !important;
+}
+.coreos-text {
+  color: #53a3da !important;
+}
+.darwin-text {
+  color: #e1dfe1 !important;
+}
+.debian-text {
+  color: #ce0056 !important;
+}
+.fedora-text {
+  color: #0b57a4 !important;
+}
+.gentoo-text {
+  color: #afaad0 !important;
+}
+.mandrake-text {
+  color: #2080bb !important;
+}
+.redhat-text {
+  color: #ee0000 !important;
+}
+.smgl-text {
+  color: #c0c0c0 !important;
+}
+.slackware-text {
+  color: #000000 !important;
+}
+.solaris-text {
+  color: #d42e12 !important;
+}
+.suse-text {
+  color: #02d35f !important;
+}
+.ubuntu-text {
+  color: #e95420 !important;
+}
+.windows-text {
+  color: #00a4ef !important;
+}
+.na-text {
+  color: #f4c9a8 !important;
+}

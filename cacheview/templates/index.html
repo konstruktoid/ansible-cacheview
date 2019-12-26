@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cacheview.</title>
+<meta charset="utf-8">
+<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='styles/style.css')}}">
+</head>
+<body>
+<h1>cacheview.</h1>
+<p>
+<div class="masonry">
+  <div class="nodes">
+  {% for host in hosts %}
+    {% if "true" in host[2] %}
+      <div class="{{host[1].lower()|e}} rounded-corners">
+    {% else %}
+      <div class="{{host[1].lower()|e}}">
+    {% endif %}
+      <a href="/node/{{host[0]}}">{{host[0]}}</a>
+    </div>
+  {% endfor %}
+    </div>
+
+    <div class="info">
+    {% if host_count == 1 %}
+      {{ host_count|e }} host in cache. <br />
+    {% else %}
+      {{ host_count|e }} hosts in cache. <br />
+    {% endif %}
+    {% if stale_cache_hosts == 1 %}
+      {{ stale_cache_hosts|e }} host got stale cache. <br />
+    {% else %}
+      {{ stale_cache_hosts|e }} hosts got stale cache. <br />
+    {% endif %}
+    {% if update_avg == "NA" %}
+      Cache age is unknown or not present. <br />
+    {% else %}
+      {{ update_avg|e }} average cache age in seconds. <br />
+    {% endif %}
+    Cache older than {{ cache_stale|e }} seconds is considered stale. <br />
+    Using cacheview version {{ cacheview_version|e }}<br />
+  </div>
+</div>
+</p>
+</body>
+</html>
