@@ -21,7 +21,7 @@ MONGODB_PORT=27017
 
 `CACHEVIEW_PORT` configures the listening port.
 
-`CACHE_STALE_SECONDS` is the amount of seconds before we consider a cache entry old.
+`CACHE_STALE_SECONDS` is the number of seconds before we consider a cache entry old.
 
 `FLASK_DEBUG` will enable Flask debug mode and create 150 fake nodes for layout
   testing if set to `1`.
@@ -56,8 +56,9 @@ fact_caching_connection = mongodb://localhost:27017/ansible_cache
 
 ```
 @app.route("/")
-@app.route("/node/<hostname>")
 @app.route("/info")
+@app.route("/node/<hostname>")
+@app.route("/result", methods=["POST", "GET"])
 ```
 
 ## usage
@@ -65,8 +66,9 @@ fact_caching_connection = mongodb://localhost:27017/ansible_cache
 ### building and running
 
 ```
-pip3 install -r requirements.txt
-python3 cacheview/cacheview.py
+pip3 install -r ./requirements.txt
+cd cacheview/
+python3 cacheview.py
 ```
 
 ### building and running using Docker
@@ -81,13 +83,19 @@ docker build --no-cache --tag konstruktoid/cacheview:latest \
 docker run -d --cap-drop=all --publish=5000:5000 konstruktoid/cacheview:latest
 ```
 
+### queries
+
+`cacheview` supports queries similar to those used with MongoDB, e.g.
+`{"data.ansible_os_family": "RedHat"}`, and will output a full JSON dump of any
+result or return an exception.
+
 ## contributing
 
 Do you want to contribute? That's great! Contributions are always welcome,
 no matter how large or small. If you found something odd, feel free to submit a
-new issue, improve the code by creating a pull request],
-or by [https://github.com/sponsors/konstruktoid](sponsoring this project).
+issue, improve the code by creating a pull request, or by
+[sponsoring this project](https://github.com/sponsors/konstruktoid).
 
-If you're submitting code, please use [https://github.com/psf/black](_Black_) with
-default settings and `python3 -m flake8 --ignore=E501`.
+If you're submitting code, please use [Black](https://github.com/psf/black)
+with default settings and `python3 -m flake8 --ignore=E501`.
 
