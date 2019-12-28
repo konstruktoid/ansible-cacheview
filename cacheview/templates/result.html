@@ -5,11 +5,13 @@
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css')|e }}">
 </head>
 <body>
-<h1> cacheview query: {{ query|e }}</h1>
+<h1 class="na-text"> cacheview query: {{ query|e }}</h1>
 <a href="/">back to index.</a>
 <p>
 <pre>
-  {{ result|e }}
+  {% for query in result %}
+    {{ query|e }}
+  {% endfor %}
 </pre>
 </p>
 </body>

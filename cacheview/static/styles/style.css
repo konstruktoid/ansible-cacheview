@@ -249,3 +249,16 @@ h1 {
 .na-text {
   color: #f4c9a8 !important;
 }
+input[type="text"] {
+  border: 1px solid black;
+  text-align: center;
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  padding: 5px;
+}
+input[type="submit"] {
+  border: 1px solid black;
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  padding: 5px;
+}

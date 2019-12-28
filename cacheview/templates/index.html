@@ -7,6 +7,10 @@
 </head>
 <body>
 <h1>cacheview.</h1>
+  <form action="/result" method="POST">
+    <input type="text" placeholder="JSON query" name="query" required />
+    <input type="submit" value="search" />
+  </form>
 <p>
 <div class="masonry">
   <div class="nodes">
@@ -19,9 +23,9 @@
       <a href="/node/{{host[0]}}">{{host[0]}}</a>
     </div>
   {% endfor %}
-    </div>
+  </div>
 
-    <div class="info">
+  <div class="info">
     {% if host_count == 1 %}
       {{ host_count|e }} host in cache. <br />
     {% else %}
@@ -38,7 +42,7 @@
       {{ update_avg|e }} average cache age in seconds. <br />
     {% endif %}
     Cache older than {{ cache_stale|e }} seconds is considered stale. <br />
-    Using cacheview version {{ cacheview_version|e }}<br />
+    Using cacheview version {{ cacheview_version|e }}
   </div>
 </div>
 </p>
