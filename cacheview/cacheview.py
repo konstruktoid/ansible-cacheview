@@ -29,7 +29,7 @@ def read_configuration():
             MONGODB_PORT = variables["MONGODB_PORT"]
             MONGODB_HOST = variables["MONGODB_HOST"]
         else:
-            print(configuration_file + " can't be found. Setting defaults.")
+            print(configuration_file + " can't be found. Using defaults.")
             CACHE_STALE_SECONDS = 3600
             CACHEVIEW_PORT = 5000
             CACHEVIEW_HOST = "127.0.0.1"
@@ -190,25 +190,40 @@ def website():
     @app.route("/result", methods=["POST", "GET"])
     def result():
         try:
+            result = []
             if request.method == "POST":
-                query = request.form["query"]
-                if collection.count_documents({"data.ansible_hostname": query}) <= 0:
-                    result = "Query " + query + " didn't return anything."
-                    return render_template("result.html", result=result, query=query)
+                try:
+                    query = request.form["query"]
+                    query = json.loads(str(query))
+                except Exception as e:
+                    result.append(e)
+                    return render_template(
+                        "result.html", result=result, query="Exception"
+                    )
+                    raise Exception(e)
 
-                for q in collection.find(
-                    {"data.ansible_hostname": query}, {"_id": 0, "data": 1}
-                ):
-                    if q:
-                        result = json.dumps(q, sort_keys=True, indent=4)
-                        return render_template(
-                            "result.html", result=result, query=query
-                        )
-                    else:
-                        return render_template("result.html", result="", query="")
+                try:
+                    if collection.count_documents(query) <= 0:
+                        result.append("Your query didn't return anything.")
+
+                    for q in collection.find(query):
+                        if q:
+                            result.append(
+                                json.dumps(q, sort_keys=True, indent=4, default=str)
+                            )
+
+                    return render_template("result.html", result=result, query=query)
+                except KeyError:
+                    pass
+                except Exception as e:
+                    result.append(e)
+                    return render_template(
+                        "result.html", result=result, query="Exception"
+                    )
+                    raise Exception(e)
         except Exception as e:
-            result = e
-            return render_template("result.html", result=result, query=query)
+            result.append(e)
+            return render_template("result.html", result=result, query="Exception")
             raise Exception(e)
 
     if FLASK_DEBUG == "1":
