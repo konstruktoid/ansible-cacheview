@@ -6,7 +6,15 @@ and the [Flask](https://palletsprojects.com/p/flask/) framework.
 
 ![cacheview index](./images/cacheview_01.png)
 
-## configuration
+## Configuration
+
+[Flask’s built-in server is not suitable for production](https://flask.palletsprojects.com/en/1.1.x/deploying/)
+and the MongoDB connection does not use any form of authentication or encrypted
+communication.
+
+Handle with care, and don't allow connections from other IP
+addresses than `127.0.0.1` unless there's proper protection and a configured
+server in place.
 
 ### cacheview.cfg
 
@@ -32,16 +40,6 @@ MONGODB_PORT=27017
 
 `MONGODB_PORT` is the listening port of the MongoDB server.
 
-#### note
-
-[Flask’s built-in server is not suitable for production](https://flask.palletsprojects.com/en/1.1.x/deploying/)
-and the MongoDB connection does not use any form of authentication or encrypted
-communication.
-
-Handle with care, and don't allow connections from other IP
-addresses than `127.0.0.1` unless there's proper protection and a configured
-server in place.
-
 ### ansible.cfg
 
 Ansible MongoDB cache plugin documentation is available at
@@ -54,7 +52,14 @@ fact_caching_timeout = 86400
 fact_caching_connection = mongodb://localhost:27017/ansible_cache
 ```
 
-### website routes
+#### MongoDB in Docker
+
+```
+docker run --cap-drop=all --cap-add={audit_write,setgid,setuid} --publish=127.0.0.1:27017:27017 --name "ansible_mongodb" -d konstruktoid/mongodb
+docker exec -ti ansible_mongodb mongo --eval 'rs.initiate()'
+```
+
+### Website routes
 
 ```
 @app.route("/")
@@ -63,9 +68,9 @@ fact_caching_connection = mongodb://localhost:27017/ansible_cache
 @app.route("/result", methods=["POST", "GET"])
 ```
 
-## usage
+## Usage
 
-### building and running
+### Building and running
 
 ```
 pip3 install -r ./requirements.txt
@@ -73,7 +78,7 @@ cd cacheview/
 python3 cacheview.py
 ```
 
-### building and running using Docker
+### Building and running using Docker
 
 ```
 docker build --no-cache --tag konstruktoid/cacheview:latest \
@@ -82,16 +87,16 @@ docker build --no-cache --tag konstruktoid/cacheview:latest \
 ```
 
 ```
-docker run -d --cap-drop=all --publish=5000:5000 konstruktoid/cacheview:latest
+docker run -d --cap-drop=all --publish=127.0.0.1:5000:5000 konstruktoid/cacheview:latest
 ```
 
-### queries
+### Queries
 
 `cacheview` supports queries similar to those used with MongoDB, e.g.
 `{"data.ansible_os_family": "RedHat"}`, and will output a full JSON dump of any
 result or return an exception.
 
-## contributing
+## Contributing
 
 Do you want to contribute? That's great! Contributions are always welcome,
 no matter how large or small. If you found something odd, feel free to submit a
