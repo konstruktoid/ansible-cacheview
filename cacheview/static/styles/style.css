@@ -255,10 +255,14 @@ input[type="text"] {
   color: #000000 !important;
   background-color: #ffffff !important;
   padding: 5px;
+  width: 10em;
 }
 input[type="submit"] {
   border: 1px solid black;
   color: #000000 !important;
   background-color: #ffffff !important;
   padding: 5px;
+  position: relative;
+  left: -5px;
+  border-left: none;
 }
