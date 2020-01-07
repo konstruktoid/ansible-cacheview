@@ -12,7 +12,7 @@ LABEL "maintainer"="Thomas Sjögren <konstruktoid@users.noreply.github.com>"
 RUN apk update && \
     apk upgrade && \
     apk --update add gcc musl-dev python3-dev python3 && \
-    pip install --upgrade pip && \
+    pip3 install --upgrade pip && \
     pip3 install black flake8 && \
     apk del gcc musl-dev python3-dev && \
     rm -rf /var/cache/apk/
