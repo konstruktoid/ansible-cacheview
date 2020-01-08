@@ -68,12 +68,19 @@ def website():
             stale_cache_hosts = 0
 
             if FLASK_DEBUG == "1":
+                system_random = random.SystemRandom()
                 for x in range(150):
-                    test_node_distribution = random.SystemRandom.choice(
-                        ["alpine", "centos", "debian", "redhat", "ubuntu"]
-                    )
+                    test_distributions = [
+                        "alpine",
+                        "centos",
+                        "debian",
+                        "redhat",
+                        "ubuntu",
+                    ]
+                    test_node_distribution = system_random.choice(test_distributions)
                     test_node_name = str(test_node_distribution) + "0" + str(x)
-                    test_node_cache = random.SystemRandom.choice(["true", "false"])
+                    test_cache = ["true", "false"]
+                    test_node_cache = system_random.choice(test_cache)
                     test_node = [
                         test_node_name,
                         test_node_distribution,
