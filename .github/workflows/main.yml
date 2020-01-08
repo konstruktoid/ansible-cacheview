@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Konstruktoid Python linting
-        uses: ./action-pylint
+        uses: konstruktoid/action-pylint@master
       - name: Create Issue
         if: failure()
         uses: JasonEtco/create-an-issue@master
