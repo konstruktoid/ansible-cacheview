@@ -69,11 +69,11 @@ def website():
 
             if FLASK_DEBUG == "1":
                 for x in range(150):
-                    test_node_distribution = random.choice(
+                    test_node_distribution = random.SystemRandom.choice(
                         ["alpine", "centos", "debian", "redhat", "ubuntu"]
                     )
                     test_node_name = str(test_node_distribution) + "0" + str(x)
-                    test_node_cache = random.choice(["true", "false"])
+                    test_node_cache = random.SystemRandom.choice(["true", "false"])
                     test_node = [
                         test_node_name,
                         test_node_distribution,
