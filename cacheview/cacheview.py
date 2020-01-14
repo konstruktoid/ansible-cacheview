@@ -207,7 +207,6 @@ def website():
                     return render_template(
                         "result.html", result=result, query="Exception"
                     )
-                    raise Exception(e)
 
                 try:
                     if collection.count_documents(query) <= 0:
@@ -227,11 +226,10 @@ def website():
                     return render_template(
                         "result.html", result=result, query="Exception"
                     )
-                    raise Exception(e)
+
         except Exception as e:
             result.append(e)
             return render_template("result.html", result=result, query="Exception")
-            raise Exception(e)
 
     if FLASK_DEBUG == "1":
         app.run(host=CACHEVIEW_HOST, port=CACHEVIEW_PORT, debug="True")
