@@ -18,7 +18,7 @@ server in place.
 
 ### cacheview.cfg
 
-```
+```sh
 CACHEVIEW_HOST=127.0.0.1
 CACHEVIEW_PORT=5000
 CACHE_STALE_SECONDS=3600
@@ -45,7 +45,7 @@ MONGODB_PORT=27017
 Ansible MongoDB cache plugin documentation is available at
 [https://docs.ansible.com/ansible/latest/plugins/cache/mongodb.html](https://docs.ansible.com/ansible/latest/plugins/cache/mongodb.html)
 
-```
+```dosini
 [defaults]
 fact_caching = mongodb
 fact_caching_timeout = 86400
@@ -54,14 +54,14 @@ fact_caching_connection = mongodb://localhost:27017/ansible_cache
 
 #### MongoDB in Docker
 
-```
+```sh
 docker run --cap-drop=all --cap-add={audit_write,setgid,setuid} --publish=127.0.0.1:27017:27017 --name "ansible_mongodb" -d konstruktoid/mongodb
 docker exec -ti ansible_mongodb mongo --eval 'rs.initiate()'
 ```
 
 ### Website routes
 
-```
+```python
 @app.route("/")
 @app.route("/info")
 @app.route("/node/<hostname>")
@@ -72,7 +72,7 @@ docker exec -ti ansible_mongodb mongo --eval 'rs.initiate()'
 
 ### Building and running
 
-```
+```sh
 pip3 install -r ./requirements.txt
 cd cacheview/
 python3 cacheview.py
@@ -80,13 +80,13 @@ python3 cacheview.py
 
 ### Building and running using Docker
 
-```
+```sh
 docker build --no-cache --tag konstruktoid/cacheview:latest \
   --tag konstruktoid/cacheview:$(awk -F '"' '{print $2}' cacheview/version.py) \
   -f Dockerfile .
 ```
 
-```
+```sh
 docker run -d --cap-drop=all --publish=127.0.0.1:5000:5000 konstruktoid/cacheview:latest
 ```
 
@@ -102,7 +102,3 @@ Do you want to contribute? That's great! Contributions are always welcome,
 no matter how large or small. If you found something odd, feel free to submit a
 issue, improve the code by creating a pull request, or by
 [sponsoring this project](https://github.com/sponsors/konstruktoid).
-
-If you're submitting code, please use [Black](https://github.com/psf/black)
-with default settings and `python3 -m flake8 --ignore=E501`.
-

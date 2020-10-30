@@ -1,8 +1,9 @@
 body {
   line-height: 1;
   overflow-x: hidden;
-  background-color: #ffffff;
+  background-color: #fff;
 }
+
 html {
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
@@ -10,257 +11,303 @@ html {
   -ms-text-size-adjust: 100%;
   font-family: sans-serif;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 h1 {
   margin: 0;
   padding: 0;
   border: 0;
   vertical-align: baseline;
 }
+
 .masonry {
   width: 100%;
 }
+
 .nodes {
   display: flex;
   flex-flow: row wrap;
   width: 50%;
   float: left;
 }
+
 .info {
   display: flex;
   flex-flow: row wrap;
   width: 50%;
   float: right;
 }
+
 .rounded-corners {
   border-radius: 0 15px 0 15px;
 }
+
 .alpine {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #0d597f !important;
+  color: #fff;
+  background-color: #0d597f;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .altlinux {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #fdd005 !important;
+  color: #fff;
+  background-color: #fdd005;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .archlinux {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #6c96d0 !important;
+  color: #fff;
+  background-color: #6c96d0;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .centos {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #efa724 !important;
+  color: #fff;
+  background-color: #efa724;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .clearlinux {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #0ab2fa !important;
+  color: #fff;
+  background-color: #0ab2fa;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .coreos {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #53a3da !important;
+  color: #fff;
+  background-color: #53a3da;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .darwin {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #e1dfe1 !important;
+  color: #fff;
+  background-color: #e1dfe1;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .debian {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #ce0056 !important;
+  color: #fff;
+  background-color: #ce0056;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .fedora {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #0b57a4 !important;
+  color: #fff;
+  background-color: #0b57a4;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .gentoo {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #afaad0 !important;
+  color: #fff;
+  background-color: #afaad0;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .mandrake {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #2080bb !important;
+  color: #fff;
+  background-color: #2080bb;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .redhat {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #ee0000 !important;
+  color: #fff;
+  background-color: #e00;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .smgl {
   text-align: center;
-  color: #000000 !important;
-  background-color: #c0c0c0 !important;
+  color: #000;
+  background-color: #c0c0c0;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .solaris {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #d42e12 !important;
+  color: #fff;
+  background-color: #d42e12;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .slackware {
   text-align: center;
-  color: #000000 !important;
-  background-color: #ffffff !important;
+  color: #000;
+  background-color: #fff;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
   border: 1px;
-  border-color: #000000;
+  border-color: #000;
 }
+
 .suse {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #02d35f !important;
+  color: #fff;
+  background-color: #02d35f;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .ubuntu {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #e95420 !important;
+  color: #fff;
+  background-color: #e95420;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .windows {
   text-align: center;
-  color: #ffffff !important;
-  background-color: #00a4ef !important;
+  color: #fff;
+  background-color: #00a4ef;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .na {
   text-align: center;
-  color: #000000 !important;
-  background-color: #f4c9a8 !important;
+  color: #000;
+  background-color: #f4c9a8;
   padding: 5px;
   width: 100px;
   margin: 0 1px 1px 0;
 }
+
 .archlinux-text {
-  color: #6c96d0 !important;
+  color: #6c96d0;
 }
+
 .altlinux-text {
-  color: #fdd005 !important;
+  color: #fdd005;
 }
+
 .alpine-text {
-  color: #0d597f !important;
+  color: #0d597f;
 }
+
 .centos-text {
-  color: #efa724 !important;
+  color: #efa724;
 }
+
 .clearlinux-text {
-  color: #0ab2fa !important;
+  color: #0ab2fa;
 }
+
 .coreos-text {
-  color: #53a3da !important;
+  color: #53a3da;
 }
+
 .darwin-text {
-  color: #e1dfe1 !important;
+  color: #e1dfe1;
 }
+
 .debian-text {
-  color: #ce0056 !important;
+  color: #ce0056;
 }
+
 .fedora-text {
-  color: #0b57a4 !important;
+  color: #0b57a4;
 }
+
 .gentoo-text {
-  color: #afaad0 !important;
+  color: #afaad0;
 }
+
 .mandrake-text {
-  color: #2080bb !important;
+  color: #2080bb;
 }
+
 .redhat-text {
-  color: #ee0000 !important;
+  color: #e00;
 }
+
 .smgl-text {
-  color: #c0c0c0 !important;
+  color: #c0c0c0;
 }
+
 .slackware-text {
-  color: #000000 !important;
+  color: #000;
 }
+
 .solaris-text {
-  color: #d42e12 !important;
+  color: #d42e12;
 }
+
 .suse-text {
-  color: #02d35f !important;
+  color: #02d35f;
 }
+
 .ubuntu-text {
-  color: #e95420 !important;
+  color: #e95420;
 }
+
 .windows-text {
-  color: #00a4ef !important;
+  color: #00a4ef;
 }
+
 .na-text {
-  color: #f4c9a8 !important;
+  color: #f4c9a8;
 }
+
 input[type="text"] {
   border: 1px solid black;
   text-align: center;
-  color: #000000 !important;
-  background-color: #ffffff !important;
+  color: #000;
+  background-color: #fff;
   padding: 5px;
   width: 10em;
 }
+
 input[type="submit"] {
   border: 1px solid black;
-  color: #000000 !important;
-  background-color: #ffffff !important;
+  color: #000;
+  background-color: #fff;
   padding: 5px;
   position: relative;
   left: -5px;
