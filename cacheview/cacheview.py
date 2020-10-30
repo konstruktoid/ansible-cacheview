@@ -189,7 +189,9 @@ def website():
             cacheview_version = __version__
             python_version = sys.version
             return render_template(
-                "info.html", version=cacheview_version, python=python_version,
+                "info.html",
+                version=cacheview_version,
+                python=python_version,
             )
         except Exception as e:
             raise Exception(e)
