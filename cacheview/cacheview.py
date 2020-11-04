@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Very basic Flask app to view Ansible cache stored in MongoDB."""
+"""Very basic Flask app to view Ansible cache stored in MongoDB."""
 import json
 import os
 import random
@@ -69,7 +69,7 @@ def mongodb_connection():
 
 
 def website_index():
-    """ Generate the website index."""
+    """Generate the website index."""
     try:
         cacheview_version = __version__
         os_distribution = "na"
