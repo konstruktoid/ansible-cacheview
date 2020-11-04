@@ -22,7 +22,7 @@ server in place.
 CACHEVIEW_HOST=127.0.0.1
 CACHEVIEW_PORT=5000
 CACHE_STALE_SECONDS=3600
-FLASK_DEBUG=0
+FLASK_TEST=0
 MONGODB_HOST=127.0.0.1
 MONGODB_PORT=27017
 ```
@@ -33,8 +33,7 @@ MONGODB_PORT=27017
 
 `CACHE_STALE_SECONDS` is the number of seconds before we consider a cache entry old.
 
-`FLASK_DEBUG` will enable Flask debug mode and create 150 fake nodes for layout
-  testing if set to `1`.
+`FLASK_TEST` will create 150 fake nodes for layout testing if set to `1`.
 
 `MONGODB_HOST` is the MongoDB server IP address.
 

@@ -136,6 +136,15 @@ h1 {
   margin: 0 1px 1px 0;
 }
 
+.macosx {
+  text-align: center;
+  color: #f9f6ef;
+  background-color: #a3aaae;
+  padding: 5px;
+  width: 100px;
+  margin: 0 1px 1px 0;
+}
+
 .mandrake {
   text-align: center;
   color: #fff;
@@ -257,6 +266,10 @@ h1 {
 
 .gentoo-text {
   color: #afaad0;
+}
+
+.macosx-text {
+  color: #a3aaae;
 }
 
 .mandrake-text {
