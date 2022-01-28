@@ -29,7 +29,7 @@ def read_configuration():
         variables = {}
 
         if os.path.isfile(configuration_file):
-            with open(configuration_file) as conf_file:
+            with open(configuration_file, encoding="UTF-8") as conf_file:
                 for line in conf_file:
                     name, value = line.split("=")
                     variables[name] = value.rstrip()
